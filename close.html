@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expandable Sections</title>
+<style>
+  body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 50px 0;
+  }
+
+  .toggle-box {
+    width: 400px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    padding: 18px 22px;
+    position: relative;
+    box-shadow: 0 0 8px rgba(255,255,255,0.08);
+    transition: all 0.3s ease;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .header span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .icon {
+    font-size: 22px;
+    font-weight: 200; /* thinner symbol */
+    transition: 0.3s ease;
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    color: #ccc;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  .active .content {
+    max-height: 200px; /* enough height for content */
+  }
+
+  .active .icon {
+    transform: rotate(180deg);
+  }
+
+  .toggle-box:hover {
+    background: #252525;
+  }
+</style>
+</head>
+<body>
+
+<!-- 6 Toggle Sections -->
+<div class="toggle-box">
+  <div class="header">
+    <span>Section 1 - Introduction</span>
+    <span class="icon">+</span>
+  </div>
+  <div class="content">
+    This is the expanded content for section 1. You can describe your introduction or overview here.
+  </div>
+</div>
+
+<div class="toggle-box">
+  <div class="header">
+    <span>Section 2 - Features</span>
+    <span class="icon">+</span>
+  </div>
+  <div class="content">
+    Details about key features go here. Mention highlights or benefits.
+  </div>
+</div>
+
+<div class="toggle-box">
+  <div class="header">
+    <span>Section 3 - Pricing</span>
+    <span class="icon">+</span>
+  </div>
+  <div class="content">
+    Outline your pricing structure or subscription plans in this section.
+  </div>
+</div>
+
+<div class="toggle-box">
+  <div class="header">
+    <span>Section 4 - FAQ</span>
+    <span class="icon">+</span>
+  </div>
+  <div class="content">
+    Add frequently asked questions or clarifications here for users.
+  </div>
+</div>
+
+<div class="toggle-box">
+  <div class="header">
+    <span>Section 5 - Contact</span>
+    <span class="icon">+</span>
+  </div>
+  <div class="content">
+    Provide contact details, email, or social links for reaching you.
+  </div>
+</div>
+
+<div class="toggle-box">
+  <div class="header">
+    <span>Section 6 - About Us</span>
+    <span class="icon">+</span>
+  </div>
+  <div class="content">
+    Share information about your team, company values, or mission.
+  </div>
+</div>
+
+<script>
+  const boxes = document.querySelectorAll(".toggle-box");
+
+  boxes.forEach(box => {
+    const header = box.querySelector(".header");
+    const icon = box.querySelector(".icon");
+
+    header.addEventListener("click", () => {
+      box.classList.toggle("active");
+
+      // Toggle + and ×
+      if (box.classList.contains("active")) {
+        icon.textContent = "×";
+      } else {
+        icon.textContent = "+";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
