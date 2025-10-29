@@ -233,7 +233,8 @@ nav button {
 .grid {
     width: 80vw;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
     gap: 20px;
 }
 
@@ -313,19 +314,19 @@ nav button {
 
 
 .icon svg {
-  display: block;
+    display: block;
 }
 
 .icon .close {
-  display: none;
+    display: none;
 }
 
 .active .icon .plus {
-  display: none;
+    display: none;
 }
 
 .active .icon .close {
-  display: block;
+    display: block;
 }
 
 
@@ -351,15 +352,15 @@ nav button {
     background: #252525;
 }
 
-.m-1{
+.m-1 {
     margin-top: 50px;
 }
 
-.m-2{
+.m-2 {
     margin-left: 145px;
 }
 
-.started-2 p{
+.started-2 p {
     text-align: center;
 }
 
@@ -375,7 +376,7 @@ nav button {
 
 .started-2 button {
 
-    
+
     border: none;
     outline: none;
     background-color: #e50914;
@@ -388,46 +389,308 @@ nav button {
 
 /*----------------------------info-----------------------------*/
 
-.font{
+.font {
     font-size: 14px;
-    font-weight:lighter;
+    font-weight: lighter;
     color: #979797;
     margin-left: 145px;
 }
 
-.info-tab{
+.info-tab {
     display: flex;
     justify-content: start;
     width: 80vw;
     flex-direction: column;
-    margin-top:60px ;
+    margin-top: 60px;
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  grid-template-rows: repeat(4, auto);   /* 4 rows */
-  gap: 12px 20px; /* row-gap and column-gap */
-  max-width: 800px;
-  margin-left: 145px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: left;
-  width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns */
+    grid-template-rows: repeat(4, auto);
+    /* 4 rows */
+    gap: 12px 20px;
+    /* row-gap and column-gap */
+    max-width: 800px;
+    margin-left: 145px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+    width: 100vw;
 }
 
 .footer-grid a {
-  color: #b3b3b3;
-  font-size: 14px;
-  transition: color 0.2s;
+    color: #b3b3b3;
+    font-size: 14px;
+    transition: color 0.2s;
 }
 
 .footer-grid a:hover {
-  color: white;
+    color: white;
 }
 
-.learn-more{
+.learn-more {
     font-size: 14px;
     color: #636363;
     margin-bottom: 100px;
+}
+
+
+
+/*---------------------------Responsiveness--------------------------*/
+
+
+@media (max-width: 1024px) {
+
+    nav {
+        max-width: 90vw;
+        padding-top: 20px;
+    }
+
+    nav img {
+        width: 120px;
+    }
+
+    .txt {
+        width: 70vw;
+        text-align: center;
+    }
+
+    .txt h1 {
+        font-size: 42px;
+    }
+
+    .txt h3 {
+        font-size: 18px;
+    }
+
+    .started input {
+        padding: 10px 100px 10px 10px;
+        font-size: 16px;
+    }
+
+    .started button {
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+
+    .trending {
+        width: 90vw;
+        gap: 40px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        justify-items: center;
+    }
+
+    .grid-items {
+        width: 90%;
+        height: auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-left: 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        max-width: 95vw;
+        padding-top: 15px;
+    }
+
+    nav img {
+        width: 100px;
+    }
+
+    .Sign,
+    .trans {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .txt {
+        width: 90vw;
+        height: auto;
+        padding-top: 80px;
+        text-align: center;
+    }
+
+    .txt h1 {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+
+    .txt h3 {
+        font-size: 16px;
+    }
+
+    .txt p {
+        font-size: 14px;
+    }
+
+    .started {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .started input {
+        width: 90%;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .started button {
+        width: 90%;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .curve-line img {
+        width: 100vw;
+    }
+
+    .trending {
+        width: 95vw;
+        gap: 20px;
+    }
+
+    .poster {
+        width: 120px;
+    }
+
+    .poster .num {
+        width: 60px;
+        left: -10px;
+        bottom: -15px;
+    }
+
+    .sub-heading,
+    .questions,
+    .font,
+    .m-2 {
+        margin-left: 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .grid-items {
+        width: 100%;
+        max-width: 95vw;
+        height: auto;
+        padding: 20px 15px;
+    }
+
+    .grid-items h2 {
+        font-size: 20px;
+    }
+
+    .grid-items p {
+        font-size: 15px;
+    }
+
+    .asked {
+        width: 90vw;
+    }
+
+    .toggle-box {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .header span {
+        font-size: 18px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+
+    .started-2 input {
+        width: 90%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .started-2 button {
+        width: 90%;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-left: 20px;
+        width: 90vw;
+    }
+
+    .footer-grid a {
+        font-size: 12px;
+    }
+
+    .learn-more {
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+}
+
+
+
+@media (max-width: 430px) {
+
+    .txt h1 {
+        font-size: 28px;
+    }
+
+    .txt h3 {
+        font-size: 15px;
+    }
+
+    .started input,
+    .started button {
+        width: 95%;
+    }
+
+    .grid-items {
+        padding: 15px 10px;
+    }
+
+    .grid-items h2 {
+        font-size: 18px;
+    }
+
+    .grid-items p {
+        font-size: 14px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        justify-items: flex-start;
+        margin-left: 20px;
+    }
+
+    .footer-grid a {
+        font-size: 13px;
+    }
 }
